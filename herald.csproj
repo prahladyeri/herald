@@ -10,6 +10,16 @@
 	  <RollForward>LatestPatch</RollForward>
 	  <ApplicationIcon>herald.ico</ApplicationIcon>
 
+	  <!-- Versioning -->
+	  <AssemblyVersion>1.0.0.0</AssemblyVersion>
+	  <FileVersion>1.0.0.0</FileVersion>
+	  <Version>1.0.0</Version>
+	  <!-- NuGet/package version -->
+	  <Company>Prahlad Yeri</Company>
+	  <Product>Herald</Product>
+	  <Authors>Prahlad Yeri</Authors>
+	  <Description>Simple and Efficient HTTP testing tool</Description>
+
   </PropertyGroup>
 
   <ItemGroup>
