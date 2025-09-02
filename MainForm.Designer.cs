@@ -56,7 +56,7 @@ partial class MainForm
         txtUrl.Location = new Point(49, 6);
         txtUrl.Name = "txtUrl";
         txtUrl.Size = new Size(417, 23);
-        txtUrl.TabIndex = 1;
+        txtUrl.TabIndex = 0;
         txtUrl.Text = "http://www.example.com/";
         // 
         // btnSend
@@ -64,7 +64,7 @@ partial class MainForm
         btnSend.Location = new Point(656, 6);
         btnSend.Name = "btnSend";
         btnSend.Size = new Size(62, 23);
-        btnSend.TabIndex = 2;
+        btnSend.TabIndex = 3;
         btnSend.Text = "Send";
         btnSend.UseVisualStyleBackColor = true;
         btnSend.Click += btnSend_Click;
@@ -77,7 +77,7 @@ partial class MainForm
         cboType.Location = new Point(472, 5);
         cboType.Name = "cboType";
         cboType.Size = new Size(78, 23);
-        cboType.TabIndex = 3;
+        cboType.TabIndex = 1;
         // 
         // lstHeaders
         // 
@@ -85,8 +85,8 @@ partial class MainForm
         lstHeaders.ItemHeight = 15;
         lstHeaders.Location = new Point(12, 100);
         lstHeaders.Name = "lstHeaders";
-        lstHeaders.Size = new Size(347, 229);
-        lstHeaders.TabIndex = 4;
+        lstHeaders.Size = new Size(347, 334);
+        lstHeaders.TabIndex = 8;
         // 
         // label2
         // 
@@ -102,7 +102,7 @@ partial class MainForm
         btnAddHeader.Location = new Point(297, 70);
         btnAddHeader.Name = "btnAddHeader";
         btnAddHeader.Size = new Size(62, 23);
-        btnAddHeader.TabIndex = 7;
+        btnAddHeader.TabIndex = 6;
         btnAddHeader.Text = "Add";
         btnAddHeader.UseVisualStyleBackColor = true;
         btnAddHeader.Click += btnAddHeader_Click;
@@ -112,23 +112,23 @@ partial class MainForm
         txtHeaderLabel.Location = new Point(12, 71);
         txtHeaderLabel.Name = "txtHeaderLabel";
         txtHeaderLabel.Size = new Size(133, 23);
-        txtHeaderLabel.TabIndex = 6;
+        txtHeaderLabel.TabIndex = 4;
         // 
         // txtHeaderValue
         // 
         txtHeaderValue.Location = new Point(151, 71);
         txtHeaderValue.Name = "txtHeaderValue";
         txtHeaderValue.Size = new Size(140, 23);
-        txtHeaderValue.TabIndex = 8;
+        txtHeaderValue.TabIndex = 5;
         // 
         // txtPost
         // 
-        txtPost.Location = new Point(406, 71);
+        txtPost.Location = new Point(385, 71);
         txtPost.Multiline = true;
         txtPost.Name = "txtPost";
         txtPost.ScrollBars = ScrollBars.Vertical;
-        txtPost.Size = new Size(312, 256);
-        txtPost.TabIndex = 11;
+        txtPost.Size = new Size(333, 366);
+        txtPost.TabIndex = 7;
         txtPost.Text = "{\r\n  \"name\": \"John Doe\",\r\n  \"job\": \"Developer\"\r\n}";
         // 
         // btnValidateJson
@@ -136,7 +136,7 @@ partial class MainForm
         btnValidateJson.Location = new Point(556, 5);
         btnValidateJson.Name = "btnValidateJson";
         btnValidateJson.Size = new Size(94, 23);
-        btnValidateJson.TabIndex = 13;
+        btnValidateJson.TabIndex = 2;
         btnValidateJson.Text = "Validate Json";
         btnValidateJson.UseVisualStyleBackColor = true;
         btnValidateJson.Click += btnValidateJson_Click;
@@ -144,7 +144,7 @@ partial class MainForm
         // label3
         // 
         label3.AutoSize = true;
-        label3.Location = new Point(406, 53);
+        label3.Location = new Point(385, 53);
         label3.Name = "label3";
         label3.Size = new Size(41, 15);
         label3.TabIndex = 14;
@@ -154,7 +154,7 @@ partial class MainForm
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(730, 337);
+        ClientSize = new Size(730, 449);
         Controls.Add(label3);
         Controls.Add(btnValidateJson);
         Controls.Add(txtPost);
