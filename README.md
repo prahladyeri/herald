@@ -6,6 +6,6 @@
 # herald
 Simple and Efficient Http Testing Tool.
 
-Requires .NET 6 or later.
+Requires [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) or later.
 
 ![herald main screen](screens/herald-mainform.png)
