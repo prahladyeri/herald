@@ -56,7 +56,7 @@ public partial class MainForm : Form
         for (var i = 0; i < lstHeaders.Items.Count; i++)
         {
             string[] headers = lstHeaders.Items[i].ToString().Split(":");
-            request.Headers.Add(headers[0], headers[1]);
+            request.Headers.TryAddWithoutValidation(headers[0], headers[1]);
         }
         request.Headers.UserAgent.ParseAdd("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36");
 
@@ -94,6 +94,9 @@ public partial class MainForm : Form
             ":" +
             txtHeaderValue.Text.Trim()
             );
+        txtHeaderLabel.Text = "";
+        txtHeaderValue.Text = "";
+        txtHeaderLabel.Focus();
     }
 
     private void btnValidateJson_Click(object sender, EventArgs e)
@@ -102,12 +105,13 @@ public partial class MainForm : Form
         bool valid = false;
         try
         {
-            if (string.IsNullOrWhiteSpace(json)) {
+            if (string.IsNullOrWhiteSpace(json))
+            {
                 valid = false;
             }
-            else 
+            else
             {
-                JsonDocument.Parse(json); 
+                JsonDocument.Parse(json);
                 valid = true;
             }
         }
@@ -118,5 +122,13 @@ public partial class MainForm : Form
         var msg = "The Json is " + (valid ? "Valid." : "not Valid.");
         var msgtype = (valid ? MessageBoxIcon.Information : MessageBoxIcon.Error);
         MessageBox.Show(msg, "", MessageBoxButtons.OK, msgtype);
+    }
+
+    private void lstHeaders_KeyDown(object sender, KeyEventArgs e)
+    {
+        if (lstHeaders.SelectedIndex < 0) return;
+        if (e.KeyCode == Keys.Delete) {
+            lstHeaders.Items.Remove(lstHeaders.SelectedItem);
+        }
     }
 }

@@ -28,6 +28,7 @@ partial class MainForm
     /// </summary>
     private void InitializeComponent()
     {
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
         label1 = new Label();
         txtUrl = new TextBox();
         btnSend = new Button();
@@ -45,27 +46,29 @@ partial class MainForm
         // label1
         // 
         label1.AutoSize = true;
-        label1.Location = new Point(12, 9);
+        label1.Location = new Point(12, 10);
         label1.Name = "label1";
-        label1.Size = new Size(34, 15);
+        label1.Size = new Size(34, 17);
         label1.TabIndex = 0;
         label1.Text = "URL:";
         // 
         // txtUrl
         // 
-        txtUrl.Location = new Point(49, 6);
+        txtUrl.Location = new Point(49, 7);
         txtUrl.Name = "txtUrl";
-        txtUrl.Size = new Size(417, 23);
+        txtUrl.Size = new Size(417, 25);
         txtUrl.TabIndex = 0;
         txtUrl.Text = "http://www.example.com/";
         // 
         // btnSend
         // 
-        btnSend.Location = new Point(656, 6);
+        btnSend.Image = (Image)resources.GetObject("btnSend.Image");
+        btnSend.Location = new Point(695, 7);
         btnSend.Name = "btnSend";
-        btnSend.Size = new Size(62, 23);
+        btnSend.Size = new Size(78, 26);
         btnSend.TabIndex = 3;
         btnSend.Text = "Send";
+        btnSend.TextImageRelation = TextImageRelation.ImageBeforeText;
         btnSend.UseVisualStyleBackColor = true;
         btnSend.Click += btnSend_Click;
         // 
@@ -74,87 +77,93 @@ partial class MainForm
         cboType.DropDownStyle = ComboBoxStyle.DropDownList;
         cboType.FormattingEnabled = true;
         cboType.Items.AddRange(new object[] { "GET", "POST", "PUT" });
-        cboType.Location = new Point(472, 5);
+        cboType.Location = new Point(472, 6);
         cboType.Name = "cboType";
-        cboType.Size = new Size(78, 23);
+        cboType.Size = new Size(78, 25);
         cboType.TabIndex = 1;
         // 
         // lstHeaders
         // 
         lstHeaders.FormattingEnabled = true;
-        lstHeaders.ItemHeight = 15;
-        lstHeaders.Location = new Point(12, 100);
+        lstHeaders.ItemHeight = 17;
+        lstHeaders.Location = new Point(4, 110);
         lstHeaders.Name = "lstHeaders";
-        lstHeaders.Size = new Size(347, 334);
+        lstHeaders.Size = new Size(418, 429);
         lstHeaders.TabIndex = 8;
+        lstHeaders.KeyDown += lstHeaders_KeyDown;
         // 
         // label2
         // 
         label2.AutoSize = true;
-        label2.Location = new Point(12, 54);
+        label2.Location = new Point(4, 58);
         label2.Name = "label2";
-        label2.Size = new Size(53, 15);
+        label2.Size = new Size(60, 17);
         label2.TabIndex = 5;
         label2.Text = "Headers:";
         // 
         // btnAddHeader
         // 
-        btnAddHeader.Location = new Point(297, 70);
+        btnAddHeader.Image = (Image)resources.GetObject("btnAddHeader.Image");
+        btnAddHeader.Location = new Point(289, 76);
         btnAddHeader.Name = "btnAddHeader";
-        btnAddHeader.Size = new Size(62, 23);
+        btnAddHeader.Size = new Size(62, 27);
         btnAddHeader.TabIndex = 6;
         btnAddHeader.Text = "Add";
+        btnAddHeader.TextImageRelation = TextImageRelation.ImageBeforeText;
         btnAddHeader.UseVisualStyleBackColor = true;
         btnAddHeader.Click += btnAddHeader_Click;
         // 
         // txtHeaderLabel
         // 
-        txtHeaderLabel.Location = new Point(12, 71);
+        txtHeaderLabel.Location = new Point(4, 77);
         txtHeaderLabel.Name = "txtHeaderLabel";
-        txtHeaderLabel.Size = new Size(133, 23);
+        txtHeaderLabel.Size = new Size(133, 25);
         txtHeaderLabel.TabIndex = 4;
         // 
         // txtHeaderValue
         // 
-        txtHeaderValue.Location = new Point(151, 71);
+        txtHeaderValue.Location = new Point(143, 77);
         txtHeaderValue.Name = "txtHeaderValue";
-        txtHeaderValue.Size = new Size(140, 23);
+        txtHeaderValue.Size = new Size(140, 25);
         txtHeaderValue.TabIndex = 5;
         // 
         // txtPost
         // 
-        txtPost.Location = new Point(385, 71);
+        txtPost.Font = new Font("Cascadia Code", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+        txtPost.Location = new Point(429, 77);
         txtPost.Multiline = true;
         txtPost.Name = "txtPost";
         txtPost.ScrollBars = ScrollBars.Vertical;
-        txtPost.Size = new Size(333, 366);
+        txtPost.Size = new Size(419, 462);
         txtPost.TabIndex = 7;
         txtPost.Text = "{\r\n  \"name\": \"John Doe\",\r\n  \"job\": \"Developer\"\r\n}";
         // 
         // btnValidateJson
         // 
-        btnValidateJson.Location = new Point(556, 5);
+        btnValidateJson.Image = (Image)resources.GetObject("btnValidateJson.Image");
+        btnValidateJson.Location = new Point(556, 6);
         btnValidateJson.Name = "btnValidateJson";
-        btnValidateJson.Size = new Size(94, 23);
+        btnValidateJson.Size = new Size(133, 26);
         btnValidateJson.TabIndex = 2;
         btnValidateJson.Text = "Validate Json";
+        btnValidateJson.TextImageRelation = TextImageRelation.ImageBeforeText;
         btnValidateJson.UseVisualStyleBackColor = true;
         btnValidateJson.Click += btnValidateJson_Click;
         // 
         // label3
         // 
         label3.AutoSize = true;
-        label3.Location = new Point(385, 53);
+        label3.Location = new Point(429, 58);
         label3.Name = "label3";
-        label3.Size = new Size(41, 15);
+        label3.Size = new Size(43, 17);
         label3.TabIndex = 14;
         label3.Text = "JSON:";
         // 
         // MainForm
         // 
-        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleDimensions = new SizeF(7F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(730, 449);
+        ClientSize = new Size(855, 558);
         Controls.Add(label3);
         Controls.Add(btnValidateJson);
         Controls.Add(txtPost);
@@ -167,8 +176,7 @@ partial class MainForm
         Controls.Add(btnSend);
         Controls.Add(txtUrl);
         Controls.Add(label1);
-        Font = new Font("Corbel", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-        FormBorderStyle = FormBorderStyle.FixedSingle;
+        Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
         MaximizeBox = false;
         Name = "MainForm";
         StartPosition = FormStartPosition.CenterScreen;
